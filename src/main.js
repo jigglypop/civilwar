@@ -1,4 +1,4 @@
-const factory = (el)=> {
+function factory(el) {
   const io = new IntersectionObserver(entries => {
     if (entries.some(entry => entry.intersectionRatio > 0)) {
       el.style.transform = "translate(0,0)"
@@ -14,7 +14,7 @@ const innerItems = document.querySelectorAll('.inner-item')
 innerItems.forEach(innerItem => factory(innerItem))
 
 
-const init = () => {
+function init() {
   const title = document.querySelector(".title");
   const subtitle = document.querySelector(".subtitle");
   const description = document.querySelector(".description")
@@ -28,10 +28,10 @@ const init = () => {
             box_items.classList.add("change");
             setTimeout(() => {
               description.classList.add("change");
-            }, 500)
-          }, 500)
-      }, 500)
-  }, 500)
+            }, 200)
+          }, 200)
+      }, 200)
+  }, 200)
 }
 
 init()

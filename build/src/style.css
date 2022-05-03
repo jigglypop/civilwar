@@ -61,6 +61,8 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background: #1d1d1d;
   width: 100%;
   height: 100%;
@@ -71,17 +73,17 @@ body {
   align-items: center;
   text-align: center;
   overflow-x: hidden;
-
+  flex-direction: column;
 }
 
 .image-filter {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 20px black;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px #fd1d1d;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   width: 100%;
-  height: 500vh;
+  height: 600vh;
 }
 
 .background-image {
@@ -94,9 +96,23 @@ body {
 
 .inner {
   position: relative;
+
   z-index: 10;
   width: 100%;
   height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.inner-under {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 500vh;
 
   display: flex;
   flex-direction: column;
@@ -109,14 +125,21 @@ body {
   z-index: 10;
 }
 
+.title-box {
+  transition: all 1s ease-in-out;
+}
+
 .title {
-  margin-top: 10rem;
+  margin-top: 20rem;
   color: white;
   font-size: 2.5rem;
   z-index: 10;
   text-shadow: 0 0 10px white;
   animation: blink 1s linear infinite;
   margin-bottom: 0;
+
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 
 .title h1 {
@@ -128,14 +151,170 @@ body {
   font-weight: 800;
   color: black;
   box-shadow: 0 0 10px white;
+
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 
 .subtitle h2 {
   padding: 1rem;
 }
 
+.description {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
 .description h2{
   font-family: "NanumBarunGothic";
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 800;
+
+}
+
+.change {
+  opacity: 1;
+  transform: translateY(-10rem);
+}
+
+.inner-item {
+  margin: 5rem;
+  width: 100%;
+  height: 100vh;
+  transition: all 1s ease-in-out;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.inner-item h3 {
+  width: 20rem;
+  font-size: 5rem;
+  border-bottom: 2px solid white;
+}
+
+.inner-item-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.inner-item-title h3{
+  font-size: 3rem;
+  border-bottom: 2px solid white;
+}
+
+.inner-item-title h5{
+  font-size: 2rem;
+}
+
+.inner-item-content {
+  font-size: 1.4rem;
+}
+
+.inner-image-box {
+  width: 16rem;
+  height: 16rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px black;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+  margin: 2rem 4rem;
+}
+
+.inner-image-box:hover {
+  opacity: 1;
+}
+
+.box-items {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+.box-items-image {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px black;
+  opacity: 0.9;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 1rem;
+}
+
+.box-items-image:hover {
+  opacity: 1;
+}
+
+.animated {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+
+}
+
+.wrapper {
+  background: black;
+  overflow: hidden;
+}
+
+.wrapper div {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.8;
+}
+
+
+.animated .one {
+  border-radius: 100%;
+  width: 80rem;
+  height: 80rem;
+  background-color: #E94057;
+  left:-70rem;
+  top:-300px;
+  z-index: 3;
+  animation: fly 12s linear infinite;
+  transform:rotate(0) translate(80px) rotate(0);
+}
+
+.animated .two {
+  width: 80rem;
+  height: 120rem;
+  background-color: #ec2F4B;
+  bottom:-4rem;
+  left:-8rem;
+}
+
+.animated .three {
+  border-radius: 100%;
+  width: 80rem;
+  height: 80rem;
+  bottom:-80px;
+  right:-100px;
+  background-color: #833ab4;
+  animation: flyPlus 8s linear infinite;
+  transform:rotate(0) translate(100px) rotate(0);
+}
+
+@keyframes fly {
+  100% {
+    transform:rotate(1turn) translate(100px) rotate(-1turn);
+  }
+}
+
+@keyframes flyPlus {
+  100% {
+    transform:rotate(-1turn) translate(100px) rotate(1turn);
+  }
 }

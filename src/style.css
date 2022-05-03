@@ -78,8 +78,7 @@ body {
 
 .image-filter {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 20px #fd1d1d;
+  background-color: rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   width: 100%;
@@ -184,7 +183,7 @@ body {
   transition: all 1s ease-in-out;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -211,7 +210,7 @@ body {
 }
 
 .inner-item-title h5{
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .inner-item-content {
@@ -219,8 +218,8 @@ body {
 }
 
 .inner-image-box {
-  width: 16rem;
-  height: 16rem;
+  width: 12rem;
+  height: 12rem;
   object-fit: cover;
   border-radius: 1rem;
   box-shadow: 0 0 10px black;
@@ -276,11 +275,11 @@ body {
 }
 
 
-.animated .one {
+/* .animated .one {
   border-radius: 100%;
   width: 80rem;
   height: 80rem;
-  background-color: #E94057;
+  background-color: #4A00E0;
   left:-70rem;
   top:-300px;
   z-index: 3;
@@ -291,7 +290,7 @@ body {
 .animated .two {
   width: 80rem;
   height: 120rem;
-  background-color: #ec2F4B;
+  background-color: #8E2DE2;
   bottom:-4rem;
   left:-8rem;
 }
@@ -302,10 +301,10 @@ body {
   height: 80rem;
   bottom:-80px;
   right:-100px;
-  background-color: #833ab4;
+  background-color: #2F0743;
   animation: flyPlus 8s linear infinite;
   transform:rotate(0) translate(100px) rotate(0);
-}
+} */
 
 @keyframes fly {
   100% {
@@ -316,5 +315,51 @@ body {
 @keyframes flyPlus {
   100% {
     transform:rotate(-1turn) translate(100px) rotate(1turn);
+  }
+}
+
+@media screen and (max-width: 800px){
+  .title h1 {
+    font-size: 3.5rem;
+  }
+
+  .box-items-image {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .subtitle h2 {
+    font-size: 1.8rem;
+  }
+
+  .inner-item-title h3{
+    font-size: 2.5rem;
+  }
+
+  .inner-item-title h5{
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .title h1 {
+    font-size: 2.8rem;
+  }
+
+  .box-items-image {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .subtitle h2 {
+    font-size: 1.4rem;
+  }
+
+  .inner-item-title h3{
+    font-size: 2rem;
+  }
+
+  .inner-item-title h5{
+    font-size: 1rem;
   }
 }
