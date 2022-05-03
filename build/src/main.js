@@ -28,10 +28,10 @@ function init() {
             box_items.classList.add("change");
             setTimeout(() => {
               description.classList.add("change");
-            }, 500)
-          }, 500)
-      }, 500)
-  }, 500)
+            }, 200)
+          }, 200)
+      }, 200)
+  }, 200)
 }
 
 init()
